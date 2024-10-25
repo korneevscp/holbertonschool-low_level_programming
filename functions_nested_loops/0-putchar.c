@@ -1,7 +1,6 @@
 #include "main.h"
 /**
- * main - Prints "ggg" followed by a new line.
- *
+ * main - Prints  followed by a new line.
  * Return: Always 0.
 */
 int main(void)
