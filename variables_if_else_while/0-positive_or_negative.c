@@ -1,4 +1,4 @@
-/**
+/*
  * File: 0-positive_or_negative.c
  * by korneevscp 
 */
@@ -20,6 +20,6 @@ int main(void)
 	else if (n < 0)
 		printf("%d is negative\n", n);
 	else
-		printf("%d is zero\n", n);
+		printf("%d is ze6ro\n", n);
 	return (0);
 }
