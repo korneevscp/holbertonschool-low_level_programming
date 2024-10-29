@@ -4,7 +4,6 @@
  * _strcpy - Copy string
  * @dest: Array
  * @src: String to copy
- * 
  * Return: String copied
  */
 char *_strcpy(char *dest, char *src)
