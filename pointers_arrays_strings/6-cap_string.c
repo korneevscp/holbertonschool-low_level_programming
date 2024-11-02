@@ -1,38 +1,35 @@
 #include "main.h"
 
 /**
- * cap_string - Capitalizes all words of a string.
+ * cap_string - Capitalizes all words in a string.
  * @str: The string to be capitalized.
  *
- * Return: A pointer to the changed string.
+ * Return: A pointer to the modified string.
  */
 char *cap_string(char *str)
 {
-	int index = 0;
+	int i, j;
+	int capitalize_next = 1;
+	char separators[] = " \t\n,;.!?\"(){}";
 
-	while (str[index])
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		while (!(str[index] >= 'a' && str[index] <= 'z'))
-			index++;
-
-		if (str[index - 1] == ' ' ||
-		    str[index - 1] == '\t' ||
-		    str[index - 1] == '\n' ||
-		    str[index - 1] == ',' ||
-		    str[index - 1] == ';' ||
-		    str[index - 1] == '.' ||
-		    str[index - 1] == '!' ||
-		    str[index - 1] == '?' ||
-		    str[index - 1] == '"' ||
-		    str[index - 1] == '(' ||
-		    str[index - 1] == ')' ||
-		    str[index - 1] == '{' ||
-		    str[index - 1] == '}' ||
-		    index == 0)
-			str[index] -= 32;
-
-		index++;
+		if (capitalize_next && str[i] >= 'a' && str[i] <= 'z')
+		{
+			str[i] -= 32;
+		}
+		for (j = 0; separators[j] != '\0'; j++)
+		{
+			if (str[i] == separators[j])
+			{
+				capitalize_next = 1;
+				break;
+			}
+		}
+		if (separators[j] == '\0')
+		{
+			capitalize_next = 0;
+		}
 	}
-
 	return (str);
 }

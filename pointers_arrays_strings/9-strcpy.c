@@ -1,23 +1,21 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
- * _strcpy - Copy string
- * @dest: Array
- * @src: String to copy
- * Return: String copied
+ *_strcpy - copy from src to dest
+ *Return: start (the string)
+ *@dest: the array where we put the string
+ *@src: the array which we take the string from
+ *
  */
 char *_strcpy(char *dest, char *src)
 {
-	int c = 0;
+	char *start = dest;
 
-	while (1)
+	while (*src != '\0')
 	{
-	dest[c] = src[c];
-	if (src[c] == '\0')
-		break;
-	c++;
+		*dest = *src;
+		dest++;
+		src++;
 	}
-
-	return (dest);
+	*dest = '\0';
+	return (start);
 }
-
